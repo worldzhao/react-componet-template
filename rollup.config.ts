@@ -3,6 +3,7 @@ import resolve from 'rollup-plugin-node-resolve';
 import postcss from 'rollup-plugin-postcss';
 import commonjs from 'rollup-plugin-commonjs';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
+import filesize from 'rollup-plugin-filesize';
 
 export default {
   input: 'src/index.ts',
@@ -31,6 +32,7 @@ export default {
       // 抽离css 如果为false 则将css注入js文件中 用户无需手动引入样式文件
       extract: true,
       extensions: ['.less']
-    })
+    }),
+    filesize()
   ]
 };

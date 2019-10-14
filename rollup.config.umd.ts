@@ -3,6 +3,7 @@ import resolve from 'rollup-plugin-node-resolve';
 import postcss from 'rollup-plugin-postcss';
 import commonjs from 'rollup-plugin-commonjs';
 import { uglify } from 'rollup-plugin-uglify';
+import filesize from 'rollup-plugin-filesize';
 
 export default {
   input: 'src/index.ts',
@@ -31,6 +32,7 @@ export default {
       minimize: true,
       extensions: ['.less']
     }),
-    uglify()
+    uglify(),
+    filesize()
   ]
 };
