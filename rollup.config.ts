@@ -2,6 +2,7 @@ import babel from 'rollup-plugin-babel';
 import resolve from 'rollup-plugin-node-resolve';
 import postcss from 'rollup-plugin-postcss';
 import commonjs from 'rollup-plugin-commonjs';
+import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 
 export default {
   input: 'src/index.ts',
@@ -15,11 +16,9 @@ export default {
       file: 'dist/lib/index.js'
     }
   ],
-  // 此处将不需要打包的模块外置
-  external(id) {
-    return /@babel\/runtime/.test(id) || ['react', 'react-dom', 'prop-types'].includes(id);
-  },
   plugins: [
+    // 外置 dependencies以及peerDependencies
+    peerDepsExternal({ includeDependencies: true }),
     resolve({ extensions: ['.js', 'jsx', '.ts', '.tsx'] }),
     babel({
       exclude: '**/node_modules/**',
