@@ -10,9 +10,9 @@ export default {
   external: ['react', 'react-dom'],
   output: [
     {
-      name: 'YourBundleName', // 填写你的包挂在window上的全局变量名称
+      name: 'RCDefaultName', // 你的包挂在window上的全局变量的名称
       format: 'umd',
-      file: 'dist/your-bundle-name.min.js',
+      file: 'dist/bundle.umd.js',
       globals: {
         react: 'React',
         'react-dom': 'ReactDOM'

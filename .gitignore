@@ -12,10 +12,6 @@
 /coverage
 
 # production
-/build
-/dist
-/lib
-/es
 
 # misc
 .DS_Store

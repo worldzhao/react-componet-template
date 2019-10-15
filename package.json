@@ -1,18 +1,16 @@
 {
-  "name": "name",
+  "name": "package-name",
   "version": "1.0.0",
-  "description": "description",
-  "repository": "repository",
-  "license": "MIT",
+  "description": "package-description",
+  "repository": "",
   "private": false,
   "authors": {
-    "name": "author-name",
-    "email": "author-email"
+    "name": "",
+    "email": ""
   },
   "keywords": [],
   "files": [
     "dist",
-    "LICENSE",
     "CHANGELOG.md",
     "README.md"
   ],
@@ -20,18 +18,19 @@
   "module": "dist/es/index.js",
   "typings": "dist/types/index.d.ts",
   "scripts": {
-    "dev": "",
-    "start": "",
+    "start": "yarn dev",
+    "dev": "doc-scripts start --input docs",
     "clean": "rimraf ./dist",
     "build": "yarn clean && run-p build:*",
     "build:pkg": "rollup -c rollup.config.ts",
     "build:umd": "rollup -c rollup.config.umd.ts",
     "build:types": "tsc --emitDeclarationOnly",
+    "build:docs": "doc-scripts build --input docs --output doc-site",
     "lint": "lint-staged",
     "commit": "git-cz",
     "test": "echo \"Error: no test specified\" && exit 1",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r",
-    "release": "standard-version && git push --follow-tags origin master"
+    "release": "standard-version"
   },
   "devDependencies": {
     "@babel/core": "^7.6.4",
@@ -52,6 +51,7 @@
     "commitizen": "^4.0.3",
     "conventional-changelog-cli": "^2.0.25",
     "cz-conventional-changelog": "^3.0.2",
+    "doc-scripts": "^1.8.1",
     "eslint": "^5.16.0",
     "eslint-config-prettier": "^4.3.0",
     "eslint-config-react-app": "^4.0.1",
