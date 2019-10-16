@@ -11,10 +11,6 @@ Features:
 5. 集成 eslint 以及 commitlint
 6. 标准发布流程
 
-Todo:
-
-- [] 集成单元测试
-
 ## 基本命令
 
 ```bash
@@ -27,7 +23,7 @@ yarn build # 打包源文件以及文档
 
 相关命令：
 
-```
+```bash
 yarn dev
 
 # or
@@ -37,7 +33,7 @@ yarn start
 
 基于[doc-scripts](https://github.com/janryWang/doc-scripts)进行文档以及开发时调试。
 
-调试方式，在 docs 文件夹下编写 markdown 文件，jsx 代码块可直接被渲染，文档即示例。
+调试方式，在 docs 文件夹中编写 markdown 文件，jsx 代码块可直接被渲染，文档即示例（可将文档复制一份至 README.md，也可在 README.md 中进行一些其他相关描述。开发时具体组件文档必须存放于 docs 文件夹下。）。
 
 注意：由于`doc-scripts`默认支持 typescript 以及 less，所以未做自定义配置，如自定义开发时配置可参见[doc-scripts](https://github.com/janryWang/doc-scripts)。
 
@@ -61,9 +57,15 @@ yarn build
 
 相关命令
 
-```
+```bash
 yarn build
 yarn release
 yarn publish
 git push --follow-tags origin master
 ```
+
+Todo:
+
+- [] 集成单元测试
+
+> 其他：可以使用`yarn commit`替换`git commit`生成规范的 commit message。
