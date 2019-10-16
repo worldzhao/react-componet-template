@@ -12,6 +12,8 @@
 /coverage
 
 # production
+/doc-site
+/dist
 
 # misc
 .DS_Store
