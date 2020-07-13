@@ -78,7 +78,7 @@
     "rollup-plugin-postcss": "^2.0.3",
     "rollup-plugin-uglify": "^6.0.3",
     "semantic-release": "^15.13.24",
-    "standard-version": "^7.0.0",
+    "standard-version": "^8.0.1",
     "typescript": "^3.6.4"
   },
   "dependencies": {
